@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: helloworldlatest 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloworldlatest
+  template:
+    metadata:
+      labels:
+        app: helloworldlatest 
+    spec:
+      containers:
+        - name: helloworldlatest 
+          image: daisyregistry.azurecr.io/helloworldlatest
+          ports:
+          - containerPort: 8080
